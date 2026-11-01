@@ -18,8 +18,14 @@
     --color-header-font: #fff;
     --color-section: #fff;
     --border-shadow: 0 2px 10px rgba(0,0,0, 0.1);
-    /* Статистика */
+    /* Основные показатели */
     --color-numder: #aaa;
+    /* Календарь */
+    --color-task-calendar-border:#e5e5e5;
+    --color-task-calendar-hover:#fafafa;
+    --color-task-calender-bg:#e8f4fd;
+    --color-task-calender:#2980b9;
+    
 }
 html
 {
@@ -123,7 +129,6 @@ footer
 }
 
 /* Основные показатели */
-
 .number-list
 {
     display: flex;
@@ -144,7 +149,98 @@ footer
     font-size: 3rem;
     font-weight: bold;
 }
+
 .number-label
 {
     color: var(--color-numder);
+}
+/* Колонки */
+.two-col
+{
+    display: flex;
+    gap: 2rem;
+
+    & section
+    {
+        flex: 1;
+    }
+}
+
+/* Календарь по проектам */
+.task-calendar-list
+{
+    margin-top: 1rem;
+}
+
+.task-calendar
+{
+    display: flex;
+    gap:1.5rem;
+    padding: 1rem 0;
+    align-items: center;
+    border-bottom: 1px solid var(--color-task-calendar-border);
+    
+    &:hover
+    {
+        background-color: var(--color-task-calendar-hover);
+    }
+}
+
+.task-calendar-date 
+{
+    width: 100px;
+    font-weight: bold;
+    color: var(--color-header)
+}
+
+.task-calendar-info {
+    flex: 1;
+}
+
+.task-calendar-label 
+{
+    margin-bottom:  0.5rem;
+    font-size: 1rem;
+}
+
+.task-calendar-project {
+    font-size: 0.8rem;
+    background-color:  var(--color-task-calender-bg);
+    padding: 0.25rem 0.7rem;
+    border-radius: 12px;
+    color: var(--color-task-calender);
+    margin: 0; 
+}
+
+/* Прогресс проектов */
+.progress-item
+{
+    margin-top: 1rem;
+}
+
+.progress-bar
+{
+    width: 100%;
+    height: 20px;
+    background-color: var(--color-task-calender-bg);
+    margin-top: 0.5rem;
+    border-radius: 10px;
+}
+
+.progress-fill
+{
+    height: 20px;
+    background-color: var(--color-task-calender);
+    border-radius: 10px;
+}
+
+/* Распределение проектов */
+.type-project
+{
+    margin: 2rem auto;
+    width: 300px;
+}
+.long-project
+{
+    margin: 2rem auto;
 }

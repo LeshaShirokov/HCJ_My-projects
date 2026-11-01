@@ -50,10 +50,76 @@
                     </div>
                 </div>
             </section>
+            <div class="two-col">
+                <section>
+                    <h2>Календарь</h2>
+                    <div class="task-calendar-list">
+                        <div class="task-calendar">
+                            <div class="task-calendar-date">01.11.2026</div>
+                            <div class="task-calendar-info">
+                                <p class="task-calendar-label">Сдача макета первой страницы</p>
+                                <span class="task-calendar-project">Портфолио</span>
+                            </div>
+                        </div>
+                        <div class="task-calendar">
+                            <div class="task-calendar-date">02.11.2026</div>
+                            <div class="task-calendar-info">
+                                <p class="task-calendar-label">Согласование первого варианта ТЗ</p>
+                                <span class="task-calendar-project">Молодёжь центра</span>
+                            </div>
+                        </div>
+                        <div class="task-calendar">
+                            <div class="task-calendar-date">04.11.2026</div>
+                            <div class="task-calendar-info">
+                                <p class="task-calendar-label">Настройка рассылок по почте</p>
+                                <span class="task-calendar-project">Молодые снегири</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Прогресс по проектам</h2>
+                    <div class="progress-item">
+                        <p>Портфолио - 40%</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <p>Молодёжь центра - 20%</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <p>Молодые снигери - 30%</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="two-col">
+                <section>
+                    <h2>Типы проектов</h2>
+                    <div class="type-project">
+                        <canvas id="type_project"></canvas>
+                    </div>
+                </section>
+                <section>
+                    <h2>Длительность проектов</h2>
+                    <div class="long-project">
+                        <canvas id="long_project"></canvas>
+                    </div>
+                </section>
+            </div>
         </main>
         <footer>
             <p>&copy; 2026 Мои проекты</p>
         </footer>
+        <!-- Подключение Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Подключение JS -->
         <script src="script.js"></script>
     </body>
 </html>
