@@ -37,5 +37,9 @@
     {
         display: flex;
     }
-    
+    .two-col
+    {
+        flex-direction: column;
+        gap: 0;
+    }
 }
