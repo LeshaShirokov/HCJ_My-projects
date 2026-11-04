@@ -72,20 +72,43 @@ nav
         text-decoration: none;
         font-size: 1rem;
         transition: color 0.3s;
+        padding: 0.8rem;
 
         &:hover
         {
             color: var(--color-nav-font-active);
+            background-color: var(--color-header);
         }
 
         &.active
         {
             color: var(--color-nav-font-active);
-            border-bottom: 2px solid var(--color-nav-font-active);
         }
     }
 }
+.menu-toggle
+{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    border: none;
+    background: none;
+    cursor: pointer;
 
+    & span
+    {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-nav-font);
+        border-radius: 3px;
+        transition: 0.3px;
+    }
+}
+
+/* Заголовок страницы */
 header
 {
     padding: 2rem;
@@ -134,7 +157,7 @@ footer
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .number-item

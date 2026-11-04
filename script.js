@@ -1,3 +1,19 @@
+// Кнопка гамбургера для меню
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu =  document.querySelector('.nav-menu');
+
+// Функия показа/скрытия меню при нажатии на кнопку
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+
+// Функция скрытия меню при переходе по ссылке
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+    })
+});
+
 // Диаграмма распределения проектов по типу
 const typeProject = document.getElementById('type_project');
 
