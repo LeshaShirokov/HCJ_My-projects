@@ -27,6 +27,7 @@
     --color-task-calender:#2980b9;
     
 }
+
 html
 {
     height: 100%;
@@ -86,6 +87,7 @@ nav
         }
     }
 }
+
 .menu-toggle
 {
     display: none;
@@ -177,15 +179,19 @@ footer
 {
     color: var(--color-numder);
 }
-/* Колонки */
-.two-col
-{
-    display: flex;
-    gap: 2rem;
 
-    & section
+/* Колонки */
+.two-col 
+{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+    
+    & section 
     {
-        flex: 1;
+        min-width: 0;
+        width: 100%;
     }
 }
 
@@ -216,7 +222,8 @@ footer
     color: var(--color-header)
 }
 
-.task-calendar-info {
+.task-calendar-info 
+{
     flex: 1;
 }
 
@@ -226,7 +233,8 @@ footer
     font-size: 1rem;
 }
 
-.task-calendar-project {
+.task-calendar-project 
+{
     font-size: 0.8rem;
     background-color:  var(--color-task-calender-bg);
     padding: 0.25rem 0.7rem;
@@ -257,13 +265,10 @@ footer
     border-radius: 10px;
 }
 
-/* Распределение проектов */
-.type-project
-{
-    margin: 2rem auto;
-    width: 300px;
-}
-.long-project
-{
-    margin: 2rem auto;
+/* Диаграммы */
+.chart-container {
+    width: 100%;
+    height: 320px;
+    margin: auto;
+    margin-top: 2rem;
 }

@@ -28,6 +28,8 @@ new Chart(typeProject,{
     },
     options:{
         cutout: '75%',
+        maintainAspectRatio: false,
+        responsive: true,
         plugins:{
             legend:{
                 position:'bottom'
@@ -48,6 +50,8 @@ new Chart(longProject, {
         }]
     },
     options:{
+        responsive: true,
+        maintainAspectRatio: false,
         plugins:{
             legend:{
                 display: false
