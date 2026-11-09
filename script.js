@@ -16,64 +16,70 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 
 // Диаграмма распределения проектов по типу
 const typeProject = document.getElementById('type_project');
-
-new Chart(typeProject,{
-    type: 'doughnut',
-    data:{
-        labels: ['Одностраничники','Квизы','VK-боты','Блоги'],
-        datasets: [{
-            data:[20,15,18,5],
-            borderWidth: 0
-        }]
-    },
-    options:{
-        cutout: '75%',
-        maintainAspectRatio: false,
-        responsive: true,
-        plugins:{
-            legend:{
-                position:'bottom'
+if(typeProject){
+    new Chart(typeProject,{
+        type: 'doughnut',
+        data:{
+            labels: ['Одностраничники','Квизы','VK-боты','Блоги'],
+            datasets: [{
+                data:[20,15,18,5],
+                borderWidth: 0
+            }]
+        },
+        options:{
+            cutout: '75%',
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins:{
+                legend:{
+                    position:'bottom'
+                }
             }
         }
-    }
-});
+    });
+}
+
 
 // Диаграмма распределения проектов по продолжительности
 const longProject = document.getElementById('long_project');
+let longChart = null;
 
-const longChart = new Chart(longProject, {
-    type: 'bar',
-    data: {
-        labels: ['До месяца', 'До 2-х месяцев', 'До 3-х месяцев', 'До 6-х месяцев', 'До года'],
-        datasets: [{
-            data: [12, 19, 8, 5, 14],
-            backgroundColor: '#2980b9',
-        }]
-    },
-    options:{
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins:{
-            legend:{
-                display: false
-            }  
+if (longProject){
+    longChart = new Chart(longProject, {
+        type: 'bar',
+        data: {
+            labels: ['До месяца', 'До 2-х месяцев', 'До 3-х месяцев', 'До 6-х месяцев', 'До года'],
+            datasets: [{
+                data: [12, 19, 8, 5, 14],
+                backgroundColor: '#2980b9',
+            }]
         },
-        scales:{
-            x:{
-                display: true,          
-                grid: {
-                    display: false     
-                },
-                border: {
+        options:{
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins:{
+                legend:{
                     display: false
-                }
+                }  
             },
-            y:{
-                display: false,
-            },
+            scales:{
+                x:{
+                    display: true,          
+                    grid: {
+                        display: false     
+                    },
+                    border: {
+                        display: false
+                    }
+                },
+                y:{
+                    display: false,
+                },
+            }
         }
-    }
-});
+    });
+}
+
 
 // Обновление цвета диаграммы при переключение темы
 
@@ -119,7 +125,9 @@ function applyTheme(theme){
             <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
         </svg>
     `;
-    chartLongUpdate(theme);
+    if (longProject){
+        chartLongUpdate(theme);
+    }
 }
 applyTheme(currentTheme)
 
