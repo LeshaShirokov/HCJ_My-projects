@@ -38,9 +38,10 @@ new Chart(typeProject,{
     }
 });
 
+// Диаграмма распределения проектов по продолжительности
 const longProject = document.getElementById('long_project');
 
-new Chart(longProject, {
+const longChart = new Chart(longProject, {
     type: 'bar',
     data: {
         labels: ['До месяца', 'До 2-х месяцев', 'До 3-х месяцев', 'До 6-х месяцев', 'До года'],
@@ -72,4 +73,59 @@ new Chart(longProject, {
             },
         }
     }
+});
+
+// Обновление цвета диаграммы при переключение темы
+
+function chartLongUpdate(theme)
+{
+    let chartColor = theme === 'dark' ? '#4a9eff' : '#2980b9';
+    longChart.data.datasets[0].backgroundColor = chartColor;
+    longChart.update();
+}
+
+// Переключение темы
+
+const themeToggle = document.getElementById('themeToggle');
+let currentTheme = localStorage.getItem('theme') || 'light';
+
+// Функция смены иконки при переключении темы
+
+function applyTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    currentTheme = theme;
+    themeToggle.innerHTML = theme === 'dark'
+    ? `
+        <svg class="theme-icon" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.42 1.42"/>
+            <path d="m17.65 17.65 1.42 1.42"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.35 17.65-1.42 1.42"/>
+            <path d="m19.07 4.93-1.42 1.42"/>
+        </svg>
+    `
+    :`
+        <svg class="theme-icon" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+            <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
+        </svg>
+    `;
+    chartLongUpdate(theme);
+}
+applyTheme(currentTheme)
+
+// Переключение темы
+themeToggle.addEventListener('click', () => {
+    const newTheme = currentTheme === 'light' ? 'dark' :'light';
+    localStorage.setItem('theme', newTheme);
+    applyTheme(newTheme);
 });

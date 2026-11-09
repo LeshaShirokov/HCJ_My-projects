@@ -25,6 +25,7 @@
     --color-task-calendar-hover:#fafafa;
     --color-task-calender-bg:#e8f4fd;
     --color-task-calender:#2980b9;
+    --color-task-date:#2c3e50;
     
 }
 
@@ -87,6 +88,13 @@ nav
         }
     }
 }
+
+.theme-icon 
+{
+    width: 1rem;
+    height: 1rem;
+}
+
 
 .menu-toggle
 {
@@ -219,7 +227,7 @@ footer
 {
     width: 100px;
     font-weight: bold;
-    color: var(--color-header)
+    color: var(--color-task-date)
 }
 
 .task-calendar-info 
@@ -322,4 +330,26 @@ footer
         margin: auto;
         margin-top: 1rem;
     }
+}
+/* Темная тема */
+html[data-theme="dark"] 
+{
+    --color-bg: #121212;
+    --color-font: #e0e0e0;
+    --color-nav: #0d1117;
+    --color-nav-font: #b0b0b0;
+    --color-nav-font-logo: #ffffff;
+    --color-nav-font-active: #ffffff;
+    --color-header: #1c252e;
+    --color-header-font: #ffffff;
+    --color-section: #1e1e1e;
+    --border-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+    --color-numder: #888888;
+
+    /* Календарь и прогресс */
+    --color-task-calendar-border: #333333;
+    --color-task-calendar-hover: #252525;
+    --color-task-calender-bg: #1a3a5c;
+    --color-task-calender: #4a9eff;
+    --color-task-date: #4a9eff;
 }
