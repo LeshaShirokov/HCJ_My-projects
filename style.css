@@ -26,7 +26,12 @@
     --color-task-calender-bg:#e8f4fd;
     --color-task-calender:#2980b9;
     --color-task-date:#2c3e50;
-    
+    /* Контакты */
+    --color-contact-border: #ddd;
+    --color-tag-red:  #c0392b;
+    --color-tag-red-bg:#fdeaea;
+    --color-tag-green:  #27ae60;
+    --color-tag-green-bg:#e8f8ef;
 }
 
 html
@@ -280,6 +285,77 @@ footer
     margin-top: 2rem;
 }
 
+/* Контакты  */
+.contact-list
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.contact-card
+{
+    flex: 0 0 350px;
+    border: 1px solid var(--color-contact-border);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.5s ease;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+
+    &:hover
+    {
+        transform: translateY(-5px);
+    }
+}
+.contact-avatar
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 35%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: var(--color-task-calender);
+    color: var(--color-header-font);
+    
+}
+.contact-name
+{
+    color: var(--color-task-calender);
+    font-weight: 600;
+}
+.contact-number
+{
+    color: var(--color-nav-font);
+}
+.contact-tag
+{
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: var(--color-task-calender-bg);
+  color: var(--color-task-calender);
+}
+.tag-blue
+{
+    background: var(--color-task-calender-bg);
+    color: var(--color-task-calender);
+}
+.tag-red
+{
+    background: var(--color-tag-red-bg);
+    color: var(--color-tag-red);
+}
+.tag-green
+{
+    background: var(--color-tag-green-bg);
+    color: var(--color-tag-green);
+}
+
 /* Мобильная версия */
 @media (max-width: 768px)
 {
@@ -351,4 +427,11 @@ html[data-theme="dark"]
     --color-task-calender-bg: #1a3a5c;
     --color-task-calender: #4a9eff;
     --color-task-date: #4a9eff;
+
+    /* Контакты */
+    --color-contact-border:#333a48;
+    --color-tag-red:  #ff6b6b;
+    --color-tag-red-bg:#5c1a1a;
+    --color-tag-green:  #4ade80;
+    --color-tag-green-bg:#1a4a2e;
 }

@@ -33,6 +33,7 @@
 
 ```
 index.html     --- Главная страница
+contacts.html  --- Cтраница Контакты
 style.css      --- Стили страницы
 script.js      --- JS-код
 ```
